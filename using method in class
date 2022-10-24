@@ -17,3 +17,29 @@ module tst_tb;
       t.tr();
     end
 endmodule
+
+using a task instead of function
+
+class tst;
+  bit[3:0]s=4'b0110;
+  function void tr();
+    $display("display:%0d ",s);
+  endfunction
+  task tt1();
+    $display("display:%0d ",s);
+    endtask  
+endclass
+
+module tst_tb;
+  tst t;///class handler
+  
+  initial
+    begin
+      t=new();
+      $display("initial value a:%b ",t.s);
+      t.tt1();
+      t.s=4'b1111;
+      $display("updated value a:%b ",t.s);
+      t.tr();
+    end
+endmodule
