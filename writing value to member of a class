@@ -1,0 +1,15 @@
+class tst;
+  bit[3:0]s=4'b0110;
+endclass
+
+module tst_tb;
+  tst t;///class handler
+  
+  initial
+    begin
+      t=new();
+      $display("initial value a:%b ",t.s);
+      t.s=4'b1111;
+      $display("updated value a:%b ",t.s);
+    end
+endmodule
