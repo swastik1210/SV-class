@@ -1,0 +1,14 @@
+class tst;
+  bit[3:0]s=4'b0110;
+endclass
+
+module tst_tb;
+  tst t; //class handler
+  
+  initial
+    begin
+      t=new();
+      $display("a:%b ",t.s);
+      
+    end
+endmodule
