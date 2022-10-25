@@ -1,0 +1,18 @@
+class temp;
+  local int x=69;  //  hides the data, or protects the data
+  
+  function int adi();
+    return x;
+  endfunction
+endclass
+
+module tb;
+  temp t;
+  int v;
+  initial
+    begin
+      t=new();
+      v=t.adi;
+      $display("value is:%d",v);
+    end
+endmodule
