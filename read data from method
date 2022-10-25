@@ -16,3 +16,25 @@ module tb;
       $monitor("Result is :%d",res);
     end
 endmodule
+
+
+// updating data member with method
+
+class temp;
+  bit [7:0]a;
+  function void adi(input bit [7:0]a);
+    this.a=a;
+  endfunction
+endclass
+
+module tb;
+  temp t;
+  
+  initial
+    begin
+      t=new();
+      t.adi(8'h47);
+      #10;
+      $monitor("Result is :%d",t.a);
+    end
+endmodule
