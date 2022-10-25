@@ -1,0 +1,18 @@
+class temp;
+  function bit[8:0] adi(input bit [7:0]a,input bit [7:0]b);
+    return a+b;
+  endfunction
+endclass
+
+module tb;
+  temp t;
+  bit [8:0]res;
+  
+  initial
+    begin
+      t=new();
+      res=t.adi(8'h34,8'h28);
+      #10;
+      $monitor("Result is :%d",res);
+    end
+endmodule
